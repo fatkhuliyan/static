@@ -601,17 +601,15 @@
 	    //     $(".gla_page_loader div").fadeOut();
 	    // 	$(".gla_page_loader").delay(200).fadeOut("slow");
 	    // });
-		// $("section").not("#gallery").imagesLoaded()
-		// .progress( function( instance, image ) {
-		// 	var result = image.isLoaded ? 'loaded' : 'broken';
-		// 	console.log( 'image is ' + result + ' for ' + image.img.src );
-		// })
-		// .done(function(instance ){
-		// 	$(".gla_page_loader div").fadeOut();
-		// 	$(".gla_page_loader").delay(200).fadeOut("slow");
-		// })
-		$(".gla_page_loader div").fadeOut();
-		$(".gla_page_loader").delay(200).fadeOut("slow");
+		$("section").not("#gallery").imagesLoaded()
+		.progress( function( instance, image ) {
+			var result = image.isLoaded ? 'loaded' : 'broken';
+			console.log( 'image is ' + result + ' for ' + image.img.src );
+		})
+		.done(function(instance ){
+			$(".gla_page_loader div").fadeOut();
+			$(".gla_page_loader").delay(200).fadeOut("slow");
+		})
 
 
 		
