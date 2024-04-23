@@ -606,7 +606,11 @@
 			var result = image.isLoaded ? 'loaded' : 'broken';
 			console.log( 'image is ' + result + ' for ' + image.img.src );
 		})
-		.always(function(instance ){
+		.done(function(instance ){
+			$(".gla_page_loader div").fadeOut();
+    			$(".gla_page_loader").delay(200).fadeOut("slow");
+		});
+		.fail(function(instance ){
 			$(".gla_page_loader div").fadeOut();
     			$(".gla_page_loader").delay(200).fadeOut("slow");
 		});
