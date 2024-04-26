@@ -1,4 +1,4 @@
-﻿(function($) {
+(function($) {
 	"use strict"; // Start of use strict
 	
 	/* Logo Lettering */
@@ -601,15 +601,16 @@
 	    //     $(".gla_page_loader div").fadeOut();
 	    // 	$(".gla_page_loader").delay(200).fadeOut("slow");
 	    // });
-		$("section").not("#gallery").imagesLoaded()
+		($("section").not("#gallery")).imagesLoaded()
 		.progress( function( instance, image ) {
-			var result = image.isLoaded ? 'loaded' : 'broken';
-			console.log( 'image is ' + result + ' for ' + image.img.src );
-		})
-		.done(function(instance ){
+			// console.log(instance);
+	    var result = image.isLoaded ? 'loaded' : 'broken';
+	    // console.log( 'image is ' + result + ' for ' + image.img.src );
+	  })
+		.always(function(instance){
 			$(".gla_page_loader div").fadeOut();
-			$(".gla_page_loader").delay(200).fadeOut("slow");
-		})
+    	$(".gla_page_loader").delay(200).fadeOut("slow");
+		});
 
 
 		
@@ -681,7 +682,7 @@
 				}
 			);
 		columns.height(tallestcolumn);
-		}	
+		}
 
 		/* Block Autheight */
 		if( !device.tablet() && !device.mobile() ) {
