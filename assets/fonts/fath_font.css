@@ -1,0 +1,10 @@
+
+@font-face {
+    font-family: 'ballerina';
+    src: url('fonts/ballerina.otf');
+    src: url('fonts/ballerina.otf?#iefix') format('embedded-opentype'),
+         url('fonts/ballerina.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+
+}
