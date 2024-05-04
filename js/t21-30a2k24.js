@@ -45,6 +45,7 @@ jQuery("#fath-input-v_id").val(v_id);
 
 const addHostStatus = (hostName, status) => {
   if (!status) {
+	  Notify(hostName);
     // const statusElement = `<span class="page-title-action" style="color:#df4545;">${hostName.toUpperCase()}</span> `;
       jQuery(`.${hostName}_status`).addClass("ffc_r");
       jQuery(`.${hostName}_status`).html(`<span class="ffm">â˜</span><code class="ffm"> ${hostName.toUpperCase()}</code>`);
