@@ -82,7 +82,7 @@ function data_grab(){
     		jQuery("#new-tag-muvisubtitle").val(res[0].subtitle+",");
     		jQuery("#new-tag-muvisize").val(res[0].size+",");
     		jQuery("#idmuvi-core-id").val(res[0].imdb);
-    		jQuery("#opsi-player1").val((res[0].fembed)?res[0].fembed:"https://t21.site/v/8pw7xs8rz51yw--");
+    		jQuery("#opsi-player1").val((res[0].fembed));
     		jQuery("#opsi-player4").val(res[0].drive);
     		jQuery("#opsi-player2").val(res[0].uptobox);
     		jQuery("#opsi-player6").val(res[0].storage);
@@ -101,7 +101,7 @@ function data_grab(){
     		jQuery("#new-tag-muvisubtitle").val(res[0].subtitle+",");
     		jQuery("#new-tag-muvisize").val(res[0].size+",");
     		jQuery("#idmuvi-core-id").val(res[0].imdb);
-    		jQuery("#opsi-player1").val((res[0].fembed)?res[0].fembed:"https://t21.site/v/8pw7xs8rz51yw--");
+    		jQuery("#opsi-player1").val((res[0].fembed));
     		jQuery("#opsi-player4").val(res[0].drive);
     		jQuery("#opsi-player2").val(res[0].uptobox);
     		jQuery("#opsi-player6").val(res[0].storage);
@@ -145,7 +145,7 @@ jQuery(document).on("click", "#fath-v_id", function() {
     		jQuery("#new-tag-muvisubtitle").val(res[0].subtitle+",");
     		jQuery("#new-tag-muvisize").val(res[0].size+",");
     		jQuery("#idmuvi-core-id").val(res[0].imdb);
-    		jQuery("#opsi-player1").val((res[0].fembed)?res[0].fembed:"https://t21.site/v/8pw7xs8rz51yw--");
+    		jQuery("#opsi-player1").val(res[0].fembed);
     		jQuery("#opsi-player4").val(res[0].drive);
     		jQuery("#opsi-player2").val(res[0].uptobox);
     		jQuery("#opsi-player6").val(res[0].storage);
@@ -164,7 +164,7 @@ jQuery(document).on("click", "#fath-v_id", function() {
     		jQuery("#new-tag-muvisubtitle").val(res[0].subtitle+",");
     		jQuery("#new-tag-muvisize").val(res[0].size+",");
     		jQuery("#idmuvi-core-id").val(res[0].imdb);
-    		jQuery("#opsi-player1").val((res[0].fembed)?res[0].fembed:"https://t21.site/v/8pw7xs8rz51yw--");
+    		jQuery("#opsi-player1").val(res[0].fembed);
     		jQuery("#opsi-player4").val(res[0].drive);
     		jQuery("#opsi-player2").val(res[0].uptobox);
     		jQuery("#opsi-player6").val(res[0].storage);
