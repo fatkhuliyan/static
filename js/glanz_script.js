@@ -594,6 +594,8 @@
 
 
 	$(window).load(function(){
+		$(".gla_page_loader div").fadeOut();
+		$(".gla_page_loader").delay(300).fadeOut("slow");
 
 			// Page loader
 	        
@@ -606,10 +608,10 @@
 			// console.log(instance);
 	    var result = image.isLoaded ? 'loaded' : 'broken';
 	    // console.log( 'image is ' + result + ' for ' + image.img.src );
-	  })
+	  	})
 		.always(function(instance){
-			$(".gla_page_loader div").fadeOut();
-    	$(".gla_page_loader").delay(200).fadeOut("slow");
+			// $(".gla_page_loader div").fadeOut();
+    		// $(".gla_page_loader").delay(200).fadeOut("slow");
 		});
 
 
