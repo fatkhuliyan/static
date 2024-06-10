@@ -55,10 +55,9 @@ const addHostStatus = (hostName, status) => {
   }
 };
 
-function data_grab(){
-    jQuery('#post_author_override').val("6");
-    let a = new Date();
-    let m = ("0" + (a.getMonth() + 1)).slice(-2);
+function date_updater(early=false){
+	let a = new Date();
+    let m = ("0" + (a.getMonth() + early?0:1)).slice(-2);
     let d = ("0" + a.getDate()).slice(-2);
     let y = a.getFullYear();
     let mm = a.getMinutes();
@@ -69,6 +68,11 @@ function data_grab(){
     if (jQuery('input[name="aa"]').length > 0) jQuery('input[name="aa"]').val(y);
     if (jQuery('input[name="hh"]').length > 0) jQuery('input[name="hh"]').val(hh);
     if (jQuery('input[name="mn"]').length > 0) jQuery('input[name="mn"]').val(mm);
+}
+
+function data_grab(){
+    jQuery('#post_author_override').val("6");
+    date_updater();
     
     jQuery('#opsi-player5').val('');
     jQuery('#opsi-player3').val('');
@@ -120,18 +124,7 @@ jQuery(document).on("input", "#fath-input-v_id", function() {data_grab()});
 
 jQuery(document).on("click", "#fath-v_id", function() {
     jQuery('#post_author_override').val("6");
-    let a = new Date();
-    let m = ("0" + (a.getMonth() + 1)).slice(-2);
-    let d = ("0" + a.getDate()).slice(-2);
-    let y = a.getFullYear();
-    let mm = a.getMinutes();
-    let hh = a.getHours();
-    if(hh == 0){mm = 0;}else{hh = hh-1;}
-    if (jQuery('select[name="mm"]').length > 0) jQuery('select[name="mm"]').val(m);
-    if (jQuery('input[name="jj"]').length > 0) jQuery('input[name="jj"]').val(d);
-    if (jQuery('input[name="aa"]').length > 0) jQuery('input[name="aa"]').val(y);
-    if (jQuery('input[name="hh"]').length > 0) jQuery('input[name="hh"]').val(hh);
-    if (jQuery('input[name="mn"]').length > 0) jQuery('input[name="mn"]').val(mm);
+    date_updater();
     
     jQuery('#opsi-player5').val('');
     jQuery('#opsi-player3').val('');
@@ -197,6 +190,7 @@ jQuery(document).on("click", "#fath-imdb", function() {
 			jQuery('input[name=idmuvi-core-released-value]').val(curr_date+" "+m_names[curr_month]+" "+curr_year);
 			jQuery('input[id=new-tag-muviyear]').val(curr_year);
 			jQuery('input[name=idmuvi-core-year-value]').val(curr_year);
+			if(Number(curr_year)>2020)date_updater(true);
 
 			jQuery('input[name=idmuvi-core-title-value]').val(res.title);
 			jQuery("input[name=post_title]").val(res.title);
