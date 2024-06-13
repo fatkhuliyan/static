@@ -57,7 +57,7 @@ const addHostStatus = (hostName, status) => {
 
 function date_updater(early=false){
 	let a = new Date();
-    let m = ("0" + (a.getMonth() + early==true?0:1)).slice(-2);
+    let m = ("0" + ((a.getMonth()) + (early===true?0:1))).slice(-2);
     let d = ("0" + a.getDate()).slice(-2);
     let y = a.getFullYear();
     let mm = a.getMinutes();
