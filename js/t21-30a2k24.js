@@ -57,11 +57,12 @@ const addHostStatus = (hostName, status) => {
 
 function date_updater(early=false){
 	let a = new Date();
-    let m = ("0" + (a.getMonth() + early?0:1)).slice(-2);
+    let m = ("0" + (a.getMonth() + early==true?0:1)).slice(-2);
     let d = ("0" + a.getDate()).slice(-2);
     let y = a.getFullYear();
     let mm = a.getMinutes();
     let hh = a.getHours();
+	console.log(m);
     if(hh == 0){mm = 0;}else{hh = hh-1;}
     if (jQuery('select[name="mm"]').length > 0) jQuery('select[name="mm"]').val(m);
     if (jQuery('input[name="jj"]').length > 0) jQuery('input[name="jj"]').val(d);
