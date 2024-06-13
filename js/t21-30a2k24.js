@@ -55,7 +55,7 @@ const addHostStatus = (hostName, status) => {
   }
 };
 
-function date_updater(early=false){
+function date_updater(early=true){
 	let a = new Date();
     let m = ("0" + ((a.getMonth()) + (early===true?0:1))).slice(-2);
     let d = ("0" + a.getDate()).slice(-2);
@@ -193,7 +193,7 @@ jQuery(document).on("click", "#fath-imdb", function() {
 			jQuery('input[name=idmuvi-core-released-value]').val(curr_date+" "+m_names[curr_month]+" "+curr_year);
 			jQuery('input[id=new-tag-muviyear]').val(curr_year);
 			jQuery('input[name=idmuvi-core-year-value]').val(curr_year);
-			if(Number(curr_year)>2020)date_updater(true);
+			if(Number(curr_year)>2020)date_updater(false);
 
 			jQuery('input[name=idmuvi-core-title-value]').val(res.title);
 			jQuery("input[name=post_title]").val(res.title);
